@@ -14,7 +14,16 @@ make
 
 
 ## VUE Frontend
+
+Login: admin/123456
+
 ```
 npm install
 npm run dev
 ```
+
+![](https://raw.githubusercontent.com/fifsky/vue-study/master/screen/login.png)
+
+![](https://raw.githubusercontent.com/fifsky/vue-study/master/screen/list.png)
+
+![](https://raw.githubusercontent.com/fifsky/vue-study/master/screen/add.png)
