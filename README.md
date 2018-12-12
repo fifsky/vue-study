@@ -1,29 +1,20 @@
-# test
+# Vue Study
 
-## Project setup
+## Golang API
+1、create `vuetest` database
+
+2、import `api/vuetest.sql` file to database
+
+3、run
+
+```
+make
+./app http
+```
+
+
+## VUE Frontend
 ```
 npm install
+npm run dev
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
