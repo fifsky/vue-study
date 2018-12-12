@@ -1,0 +1,6 @@
+{
+  "env": "local",
+  "debug": "on",
+  "storage_path": "storage/",
+  "token_secret":"Cif$kyL!1234@iLU"
+}

@@ -1,0 +1,6 @@
+{
+  "env": "prod",
+  "debug": "off",
+  "storage_path": "/data/app/",
+  "token_secret":"Cif$kyL!1234@iLU"
+}
