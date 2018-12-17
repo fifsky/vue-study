@@ -33,9 +33,9 @@ var AdminMoodList core.HandlerFunc = func(c *core.Context) core.Response {
 	return c.Success(gin.H{
 		"list": moods,
 		"page": gin.H{
-			"total":   pager.Total(),
-			"num":     pager.PagingNum(),
-			"current": pager.Current(),
+			"total":    pager.Total(),
+			"pageSize": pager.PagingNum(),
+			"current":  pager.Current(),
 		},
 	})
 }
@@ -52,7 +52,7 @@ var AdminMoodPost core.HandlerFunc = func(c *core.Context) core.Response {
 		return c.Fail(201, "内容不能为空")
 	}
 
-	id, err := gosql.Model(moods).Create();
+	id, err := gosql.Model(moods).Create()
 	if err != nil {
 		return c.Fail(201, "发表失败")
 	}

@@ -11,7 +11,7 @@
             </div>
             <Table :loading="loading" stripe border :columns="columns" :data="data"></Table>
             <div style="margin-top: 10px">
-                <Page :total="pager.total" :page-size="pager.num" show-total @on-change="getList"/>
+                <Page :total="pager.total" :page-size="pager.pageSize" show-total @on-change="getList"/>
             </div>
         </Card>
         <Modal
@@ -111,7 +111,7 @@
         "data": [],
         "pager": {
           "current": 1,
-          "num": 10,
+          "pageSize": 10,
           "total": 0
         }
       }

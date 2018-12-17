@@ -1,13 +1,12 @@
 package cmd
 
 import (
+	"app/router"
 	"context"
 	"log"
 	"net/http"
 	"os"
 	"time"
-
-	"app/router"
 
 	"github.com/gin-gonic/gin"
 	"github.com/ilibs/very/command"
@@ -47,6 +46,8 @@ var HTTPCmd = cli.Command{
 			}
 			log.Println("HTTP Server exiting")
 		})
+
+		log.Printf("HTTP listen: %s\n", ctx.String("addr"))
 
 		// service connections
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
