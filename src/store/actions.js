@@ -1,5 +1,5 @@
 import co from 'co'
-import { loginApi } from '../api'
+import { loginApi,userApi } from '../service'
 
 export default {
   loginAction({commit},data){
@@ -13,5 +13,11 @@ export default {
       localStorage.setItem('access_token', ret.access_token)
       commit("setUserInfo",ret.user)
     })
-  }
+  },
+  currentUserAction({commit}){
+    return co(function * () {
+      let ret = yield userApi()
+      commit("setUserInfo",ret)
+    })
+  },
 }

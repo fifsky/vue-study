@@ -1,11 +1,7 @@
 <template>
   <div>
-    <Card style="width:780px;margin: 20px auto">
+    <Card style="width:800px;margin: 20px auto" dis-hover>
       <p slot="title">每日心情</p>
-      <a href="#" slot="extra" @click.prevent="logOut">
-        <Icon type="ios-loop-strong"></Icon>
-        退出登录
-      </a>
       <div style="padding: 0 0 10px 0;text-align: left">
         <Button type="primary" @click="add_modal=true">发表</Button>
       </div>
@@ -43,7 +39,7 @@
 </template>
 <script>
   import { get, sync } from '../utils'
-  import { addApi, deleteApi, listApi } from '../api'
+  import { addApi, deleteApi, listApi } from '../service'
 
   export default {
     data () {
@@ -102,10 +98,6 @@
             this.remove(row)
           },
         })
-      },
-      logOut () {
-        localStorage.removeItem('access_token')
-        this.$router.push('/login')
       },
       getList (page) {
         let self = this
