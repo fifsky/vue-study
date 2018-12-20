@@ -137,20 +137,18 @@
         sync(function* () {
           self.loading = true
           yield deleteApi({id: params.row.id})
+          self.getList(self.pager.current)
           self.loading = false
-          self.data.splice(params.index, 1);
-          self.pager.total--
         })
       },
       add() {
         let self = this
         sync(function* () {
           self.loading = true
-          let ret = yield addApi(self.formItem)
+          yield addApi(self.formItem)
           self.formItem.content = ""
+          self.getList(self.pager.current)
           self.loading = false
-          self.data.unshift(ret)
-          self.pager.total++
         })
       },
     },
