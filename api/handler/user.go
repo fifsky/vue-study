@@ -6,6 +6,13 @@ import (
 	"github.com/ilibs/very/core"
 )
 
+
+var AdminUser core.HandlerFunc = func(c *core.Context) core.Response {
+	user := getLoginUser(c)
+	return c.Success(user)
+}
+
+
 var UserList core.HandlerFunc = func(c *core.Context) core.Response {
 	p := struct {
 		Id int `json:"id"`

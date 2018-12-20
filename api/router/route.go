@@ -22,6 +22,7 @@ func Route(router *gin.Engine) {
 	admin := router.Group("/api/admin")
 	admin.Use(core.Middleware(middleware.AuthLogin))
 	{
+		admin.POST("/user", core.Handle(handler.AdminUser))
 		admin.POST("/list", core.Handle(handler.AdminMoodList))
 		admin.POST("/add", core.Handle(handler.AdminMoodPost))
 		admin.POST("/delete", core.Handle(handler.AdminMoodDelete))
