@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ilibs/very/command"
+	"github.com/goapt/gee"
+	"github.com/goapt/golib/osutil"
 	"github.com/urfave/cli"
-	"github.com/verystar/golib/osutil"
 )
 
 var HTTPCmd = cli.Command{
@@ -59,5 +59,5 @@ var HTTPCmd = cli.Command{
 }
 
 func init() {
-	command.Register(HTTPCmd)
+	gee.RegisterCommand(HTTPCmd)
 }

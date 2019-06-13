@@ -1,18 +1,19 @@
 package middleware
 
 import (
+	"strings"
+
 	"app/config"
 	"app/model"
 	"encoding/base64"
-	"github.com/ilibs/gosql"
-	"github.com/verystar/golib/cryptoutil"
-	"github.com/verystar/golib/hashing"
-	"strings"
 
-	"github.com/ilibs/very/core"
+	"github.com/goapt/gee"
+	"github.com/goapt/golib/cryptoutil"
+	"github.com/goapt/golib/hashing"
+	"github.com/ilibs/gosql"
 )
 
-var AuthLogin core.HandlerFunc = func(c *core.Context) core.Response {
+var AuthLogin gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	accessToken := c.Request.Header.Get("Access-Token")
 
 	if accessToken == "" {
@@ -37,7 +38,7 @@ var AuthLogin core.HandlerFunc = func(c *core.Context) core.Response {
 	}
 
 	user := &model.Users{}
-	err = gosql.Model(user).Where("id = ?",v[0]).Get()
+	err = gosql.Model(user).Where("id = ?", v[0]).Get()
 	if err != nil {
 		return c.Fail(201, "Access Token错误，用户不存在")
 	}

@@ -3,13 +3,13 @@ package handler
 import (
 	"app/model"
 	"github.com/gin-gonic/gin"
+	"github.com/goapt/gee"
+	"github.com/goapt/golib/pagination"
+	"github.com/goapt/logger"
 	"github.com/ilibs/gosql"
-	"github.com/ilibs/very/core"
-	"github.com/verystar/golib/pagination"
-	"github.com/verystar/logger"
 )
 
-var AdminMoodList core.HandlerFunc = func(c *core.Context) core.Response {
+var AdminMoodList gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	p := &struct {
 		Page int `json:"page"`
 	}{}
@@ -40,7 +40,7 @@ var AdminMoodList core.HandlerFunc = func(c *core.Context) core.Response {
 	})
 }
 
-var AdminMoodPost core.HandlerFunc = func(c *core.Context) core.Response {
+var AdminMoodPost gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	moods := &model.Moods{}
 	if err := c.ShouldBindJSON(moods); err != nil {
 		return c.Fail(201, "参数错误:"+err.Error())
@@ -66,7 +66,7 @@ var AdminMoodPost core.HandlerFunc = func(c *core.Context) core.Response {
 	return c.Success(userMood)
 }
 
-var AdminMoodDelete core.HandlerFunc = func(c *core.Context) core.Response {
+var AdminMoodDelete gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	mood := &model.Moods{}
 	if err := c.ShouldBindJSON(mood); err != nil {
 		return c.Fail(201, "参数错误:"+err.Error())

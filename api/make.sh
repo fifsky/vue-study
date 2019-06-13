@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #---------------------
 # Golang manager for make
-# https://github.com/verystar/gomake
+# https://github.com/goapt/gomake
 #---------------------
 
 APP="app"

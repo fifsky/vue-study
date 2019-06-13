@@ -1,10 +1,10 @@
 package handler
 
 import (
-	"github.com/ilibs/very/core"
+	"github.com/goapt/gee"
 )
 
-var AdminUser core.HandlerFunc = func(c *core.Context) core.Response {
+var AdminUser gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	user := getLoginUser(c)
 	return c.Success(user)
 }

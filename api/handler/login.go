@@ -6,14 +6,14 @@ import (
 	"encoding/base64"
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/verystar/golib/cryptoutil"
-	"github.com/verystar/golib/hashing"
+	"github.com/goapt/golib/cryptoutil"
+	"github.com/goapt/golib/hashing"
 
+	"github.com/goapt/gee"
 	"github.com/ilibs/gosql"
-	"github.com/ilibs/very/core"
 )
 
-var Login core.HandlerFunc = func(c *core.Context) core.Response {
+var Login gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	p := &struct {
 		UserName string `json:"user_name"`
 		Password string `json:"password"`

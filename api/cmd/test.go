@@ -5,10 +5,10 @@ import (
 
 	"app/model"
 
+	"github.com/goapt/gee"
+	"github.com/goapt/logger"
 	"github.com/ilibs/gosql"
-	"github.com/ilibs/very/command"
 	"github.com/urfave/cli"
-	"github.com/verystar/logger"
 )
 
 var TestCmd = cli.Command{
@@ -40,5 +40,5 @@ var TestCmd = cli.Command{
 }
 
 func init() {
-	command.Register(TestCmd)
+	gee.RegisterCommand(TestCmd)
 }

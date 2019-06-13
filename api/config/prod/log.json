@@ -3,7 +3,7 @@
     "log_mode": "file",
     "log_level": "info",
     "log_max_files": 15,
-    "log_sentry_dsn": "https://25b0e63c81264cf0b708c9d5b34749ac:a0024c692dbc4bab884cece2b5afc952@sentry.verystar.cn/3",
+    "log_sentry_dsn": "",
     "log_sentry_type": "go.example",
     "log_detail":false
 }

@@ -5,8 +5,7 @@ import (
 
 	"app/router/middleware"
 	"github.com/gin-gonic/gin"
-	"github.com/ilibs/very/core"
-	"github.com/ilibs/very/debug"
+	"github.com/goapt/gee"
 )
 
 func Route(router *gin.Engine) {
@@ -14,20 +13,20 @@ func Route(router *gin.Engine) {
 	//core.SetTemplate(router)
 
 	//中间件
-	router.Use(core.Middleware(middleware.Ginrus))
-	router.HEAD("/heartbeat/check", core.Handle(handler.Check))
+	router.Use(gee.Middleware(middleware.Ginrus))
+	router.HEAD("/heartbeat/check", gee.Handle(handler.Check))
 
-	router.POST("/api/login", core.Handle(handler.Login))
+	router.POST("/api/login", gee.Handle(handler.Login))
 
 	admin := router.Group("/api/admin")
-	admin.Use(core.Middleware(middleware.AuthLogin))
+	admin.Use(gee.Middleware(middleware.AuthLogin))
 	{
-		admin.POST("/user", core.Handle(handler.AdminUser))
-		admin.POST("/list", core.Handle(handler.AdminMoodList))
-		admin.POST("/add", core.Handle(handler.AdminMoodPost))
-		admin.POST("/delete", core.Handle(handler.AdminMoodDelete))
+		admin.POST("/user", gee.Handle(handler.AdminUser))
+		admin.POST("/list", gee.Handle(handler.AdminMoodList))
+		admin.POST("/add", gee.Handle(handler.AdminMoodPost))
+		admin.POST("/delete", gee.Handle(handler.AdminMoodDelete))
 	}
 
 	//debug handler
-	debug.Route(router)
+	gee.DebugRoute(router)
 }

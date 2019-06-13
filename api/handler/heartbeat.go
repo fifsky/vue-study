@@ -1,9 +1,9 @@
 package handler
 
 import (
-	"github.com/ilibs/very/core"
+	"github.com/goapt/gee"
 )
 
-var Check core.HandlerFunc = func(c *core.Context) core.Response {
+var Check gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	return c.String("ok")
 }

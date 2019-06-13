@@ -8,10 +8,10 @@ import (
 	"time"
 
 	"github.com/fifsky/goconf"
+	"github.com/goapt/gee"
+	"github.com/goapt/golib/debug"
+	"github.com/goapt/logger"
 	"github.com/ilibs/gosql"
-	"github.com/ilibs/very/server"
-	"github.com/verystar/golib/debug"
-	"github.com/verystar/logger"
 )
 
 type common struct {
@@ -34,8 +34,8 @@ var App = &app{
 }
 
 func init() {
-	server.ArgsInit()
-	Load(server.ExtArgs)
+	gee.ArgsInit()
+	Load(gee.ExtCliArgs)
 }
 
 func Load(args map[string]string) {

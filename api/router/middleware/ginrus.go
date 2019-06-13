@@ -3,11 +3,11 @@ package middleware
 import (
 	"time"
 
-	"github.com/ilibs/very/core"
-	"github.com/verystar/logger"
+	"github.com/goapt/gee"
+	"github.com/goapt/logger"
 )
 
-var Ginrus core.HandlerFunc = func(c *core.Context) core.Response {
+var Ginrus gee.HandlerFunc = func(c *gee.Context) gee.Response {
 	start := time.Now()
 	// some evil middlewares modify this values
 	path := c.Request.URL.Path

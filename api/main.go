@@ -6,8 +6,8 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 
+	"github.com/goapt/gee"
 	"github.com/ilibs/gosql"
-	"github.com/ilibs/very/server"
 )
 
 func main() {
@@ -15,6 +15,6 @@ func main() {
 	gosql.Connect(config.App.DB)
 
 	//command server
-	cliServ := server.NewCliServer()
+	cliServ := gee.NewCliServer()
 	cliServ.Run()
 }
