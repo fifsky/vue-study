@@ -12,7 +12,7 @@
               <Icon type="ios-people"/>个人中心</RouterLink>
           </MenuItem>
           <MenuItem name="3">
-            <a href="https://pay.verystar.cn" target="_blank"
+            <a href="https://fifsky.com" target="_blank"
                rel="noopener">
               <Icon type="ios-link"/>
               VeryPay</a>
