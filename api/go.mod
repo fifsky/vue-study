@@ -2,7 +2,7 @@ module app
 
 require (
 	github.com/fifsky/goconf v1.0.1
-	github.com/gin-gonic/gin v1.7.0
+	github.com/gin-gonic/gin v1.7.7
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/goapt/gee v1.1.0
 	github.com/goapt/golib v1.0.0
